@@ -157,13 +157,6 @@ exclude:
   - .git
   - .github
   - .cursor
-  - squash_history.sh
-  - 压缩历史说明.md
-  - css
-  - js
-  - fonts
-  - 403.html
-  - 404.html
 
 jekyll-archives:
   enabled: [categories, tags]
