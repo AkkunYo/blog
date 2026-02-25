@@ -1,0 +1,23 @@
+{%- comment -%}
+  输出内容并去掉代码块行号（Rouge 的 rouge-gutter），用于首页摘要等场景。
+  参数: content - 要处理的文章内容
+{%- endcomment -%}
+{%- assign _content = include.content -%}
+{%- if _content contains '<td class="rouge-gutter gl"><pre class="lineno">' -%}
+  {%- assign _content = _content
+    | replace: '<td class="rouge-gutter gl"><pre class="lineno">',
+      '<!-- <td class="rouge-gutter gl"><pre class="lineno">'
+  -%}
+  {%- assign _content = _content | replace: '</td><td class="rouge-code">', '</td> --><td class="rouge-code">' -%}
+{%- endif -%}
+{%- assign _content = _content
+  | markdownify
+  | strip_html
+  | newline_to_br
+  | replace: '<br />', ' '
+  | strip_newlines
+  | strip
+  | truncate: 200
+  | escape
+-%}
+{{- _content -}}

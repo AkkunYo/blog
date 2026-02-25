@@ -51,7 +51,7 @@ analytics:
 pageviews:
   provider:
 
-theme_mode:
+theme_mode: # [light | dark] 留空则跟随系统，用户可自行切换
 
 cdn:
 

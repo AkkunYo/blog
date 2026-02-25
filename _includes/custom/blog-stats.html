@@ -1,0 +1,67 @@
+<div class="blog-stats" style="
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.6rem;
+  margin: 1.5rem 0;
+">
+  <div class="stat-card" style="
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 0.6rem 0.5rem;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+    transition: transform 0.3s ease;
+  " onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+    <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.2rem;">
+      {{ site.posts.size }}
+    </div>
+    <div style="opacity: 0.9; font-size: 0.75rem;">📝 文章总数</div>
+  </div>
+
+  <div class="stat-card" style="
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    padding: 0.6rem 0.5rem;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(240, 147, 251, 0.3);
+    transition: transform 0.3s ease;
+  " onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+    <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.2rem;">
+      {{ site.categories.size }}
+    </div>
+    <div style="opacity: 0.9; font-size: 0.75rem;">📂 分类数量</div>
+  </div>
+
+  <div class="stat-card" style="
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    padding: 0.6rem 0.5rem;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(79, 172, 254, 0.3);
+    transition: transform 0.3s ease;
+  " onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+    <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.2rem;">
+      {{ site.tags.size }}
+    </div>
+    <div style="opacity: 0.9; font-size: 0.75rem;">🏷️ 标签数量</div>
+  </div>
+
+  <div class="stat-card" style="
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    padding: 0.6rem 0.5rem;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(250, 112, 154, 0.3);
+    transition: transform 0.3s ease;
+  " onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='translateY(0)'">
+    {% assign days = site.time | date: "%s" | minus: 1462896000 | divided_by: 86400 %}
+    <div style="font-size: 1.25rem; font-weight: 700; margin-bottom: 0.2rem;">
+      {{ days }}
+    </div>
+    <div style="opacity: 0.9; font-size: 0.75rem;">⏰ 运行天数</div>
+  </div>
+</div>

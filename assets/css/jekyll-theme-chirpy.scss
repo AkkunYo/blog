@@ -1,0 +1,146 @@
+---
+---
+
+@import 'main
+  {%- if jekyll.environment == 'production' -%}
+    .bundle
+  {%- endif -%}
+';
+
+/* 自定义样式 */
+
+/* 首页文章卡片优化 */
+#post-list .card-wrapper {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#post-list .card-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* 文章标题渐变效果 */
+.post-preview h1 a {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.post-preview h1 a:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 标签样式优化 */
+.post-tag {
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  border: 1px solid #667eea30;
+  border-radius: 15px;
+  padding: 0.2rem 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.post-tag:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white !important;
+  transform: scale(1.05);
+}
+
+/* 代码块优化 */
+.highlight {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* 返回顶部按钮优化 */
+#back-to-top {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+}
+
+#back-to-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+}
+
+/* 侧边栏头像优化 */
+#avatar img {
+  transition: transform 0.3s ease;
+}
+
+#avatar:hover img {
+  transform: scale(1.05) rotate(5deg);
+}
+
+/* 文章元信息图标颜色 */
+.post-meta i {
+  color: #667eea;
+}
+
+/* 链接悬停效果 */
+.post-content a {
+  position: relative;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.post-content a:hover {
+  border-bottom-color: #667eea;
+}
+
+/* 引用块样式 */
+blockquote {
+  border-left: 4px solid #667eea;
+  background: linear-gradient(90deg, #667eea08 0%, transparent 100%);
+  padding: 1rem 1.5rem;
+  border-radius: 0 8px 8px 0;
+}
+
+/* 表格样式优化 */
+table {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: #2a2a2a;
+  }
+
+  blockquote {
+    background: linear-gradient(90deg, #667eea15 0%, transparent 100%);
+  }
+}
